@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Point Route</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style>
+  #map {
+    height: 500px;
+  }
+  #directions-panel {
+    height: 500px;
+    float: right;
+    width: 25%;
+    overflow: auto;
+  }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1 class="text-center"> Point Route </h1>
+    <div class="col pb-2 text-center">
+        <div>
+          <label class="col-1" for="origin-input">Origin: </label>
+          <input class="col-5" id="origin-input" placeholder="Origin" type="text"></input>
+        </div>
+        <div>
+          <label class="col-1" for="destination-input">Destnation: </label>
+          <input class="col-5" id="destination-input" placeholder="Destination" type="text"></input>
+        </div>
+        <button type="button" class="btn btn-primary" onClick="getDirections()">Go</button>
+    </div>
+    <div class="col">
+      <div class="pl-2" id="directions-panel"></div>
+      <div id="map"></div>
+    </div>
+  </div>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="search/search.js"></script>
+<script src="results/directions.js"></script>
+<script src="results/weather.js"></script>
+<script src="config.js"></script>
+<script id="google-url" async defer></script>
+</body>
+</html>
