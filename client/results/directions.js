@@ -38,10 +38,6 @@ function typecastRoutes(routes){
   return routes;
 }
 
-function modifyStepDirection(instruction, temp) {
-  return (instruction + "; Current Temperature: " + temp + " °F");
-};
-
 function asBounds(boundsObject){
   return new google.maps.LatLngBounds(asLatLng(boundsObject.southwest),
   asLatLng(boundsObject.northeast));

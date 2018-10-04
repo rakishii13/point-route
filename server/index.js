@@ -8,9 +8,7 @@ var app = express();
 var port = process.env.PORT;
 var distDir = '../client/';
 
-var ptRoutes = require('./api-routes');
-
-var dbRoutes = require('./db-routes');
+var ptRoutes = require('./routes');
 
 var mysql = require('mysql');
 
@@ -26,17 +24,4 @@ app.use(/^((?!(api)).)*/, (req, res) => {
 
 app.use('/api', ptRoutes);
 
-app.use('/db', dbRoutes);
-
 app.listen(port);
-
-app.use(function(req, res, next){
-	res.locals.connection = mysql.createConnection({
-		host     : process.env.DB_HOST,
-		user     : process.env.DB_USER,
-		password : process.env.DB_PASS,
-    database : process.env.DB_NAME
-	});
-	res.locals.connect();
-	next();
-});

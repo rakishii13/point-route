@@ -1,15 +1,14 @@
 {
-  "name": "server",
+  "name": "PointRoute",
   "version": "1.0.0",
-  "description": "Backend server for PointRoute",
+  "description": "PointRoute with NodeJS, ExpressJS, VanillaJS, HTML, and MySQL",
   "main": "index.js",
+  "author": "Rakshit Viswanatham",
+  "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
     "dBsetup": "node db-setup.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@google/maps": "^0.5.5",
     "body-parser": "^1.18.3",
@@ -17,6 +16,7 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "method-override": "^3.0.0",
+    "moment": "^2.22.2",
     "morgan": "^1.9.1",
     "multer": "^1.4.0",
     "mysql": "^2.16.0",

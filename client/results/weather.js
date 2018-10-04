@@ -3,14 +3,6 @@ function getWeather(point, type, coordinates){
   return $.ajax({
     url: this.url_weather,
     success: function(response) {
-      weather_data.push({
-        type: type,
-        city: response.name,
-        temp: response.main.temp,
-        temp_max: response.main.temp_max,
-        temp_min: response.main.temp_min,
-        date: response.dt,
-      });
       if(type == 'step') {
         point.instructions = modifyStepDirection(point.instructions, response.main.temp);
       } else if(type == 'start') {
@@ -20,4 +12,8 @@ function getWeather(point, type, coordinates){
       }
     }
   });
-}
+};
+
+function modifyStepDirection(instruction, temp) {
+  return (instruction + " Current Temperature: " + temp + " °F");
+};
