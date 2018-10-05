@@ -1,3 +1,11 @@
+/**
+ * The purpose of this file is to take all the needed requirements
+ * to connect to the mysql database and then setup the 2 tables needed.
+ * One is for the google routes with origin, destination and directions.
+ * Second is for the weather data that contains the weather for a Latitude
+ * and longitude with the temperature and date.
+ */
+
 var mysql = require('mysql');
 require('dotenv').config();
 var connection = mysql.createConnection({

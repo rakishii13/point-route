@@ -1,7 +1,7 @@
 {
   "name": "PointRoute",
   "version": "1.0.0",
-  "description": "PointRoute with NodeJS, ExpressJS, VanillaJS, HTML, and MySQL",
+  "description": "PointRoute with NodeJS, ExpressJS, VanillaJS, HTML, with Bootstrap and MySQL",
   "main": "index.js",
   "author": "Rakshit Viswanatham",
   "license": "ISC",

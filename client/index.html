@@ -22,24 +22,34 @@
     <h1 class="text-center"> Point Route </h1>
     <div class="col pb-2 text-center">
         <div>
+          <!-- the required fields to enter the origin -->
           <label class="col-1" for="origin-input">Origin: </label>
           <input class="col-5" id="origin-input" placeholder="Origin" type="text"></input>
         </div>
         <div>
+          <!-- the required fields to enter the destination -->
           <label class="col-1" for="destination-input">Destnation: </label>
           <input class="col-5" id="destination-input" placeholder="Destination" type="text"></input>
         </div>
         <button type="button" class="btn btn-primary" onClick="getDirections()">Go</button>
     </div>
     <div class="col">
+      <!-- the following is the panel that shows the step by step directions -->
       <div class="pl-2" id="directions-panel"></div>
+      <!-- the div that contains the map with directions route and the markers -->
       <div id="map"></div>
     </div>
   </div>
+<!-- the following scripts include the required files to make the app work -->
+<!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<!-- the autocomplete and initmap functions -->
 <script src="search/search.js"></script>
+<!-- the querying and processing of the directions -->
 <script src="results/directions.js"></script>
+<!-- the querying and processing of weather -->
 <script src="results/weather.js"></script>
+<!-- the config file for google api key -->
 <script src="config.js"></script>
 <script id="google-url" async defer></script>
 </body>

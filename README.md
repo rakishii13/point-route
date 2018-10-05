@@ -1,6 +1,6 @@
 # README for PointRoute v2 #
 
-Please follow the directions to download the src code and setup the right enivronment to be able to load the website on the localhost.
+Please follow the directions to download the src code and setup the right environment to be able to load the website on the localhost.
 
 Please read before performing any actions.
 
@@ -15,7 +15,7 @@ Please read before performing any actions.
 
 - This website version needs NodeJS and NPM to run all the scripts and tasks.
 - Please download the latest NodeJS or version 8.12.x for your machine OS from the following link https://nodejs.org/en/download/
-- Please follow the instructions to download NodeJS and NPM and it comes with its own command line or you can use powershell or git bash (the recommended one, https://git-scm.com/downloads)
+- Please follow the instructions to download NodeJS and NPM and it comes with its own command line or you can use PowerShell or git bash (the recommended one, https://git-scm.com/downloads)
 - Make sure to also download MySQL and follow all the instructions to install a local server and to start it up. https://www.mysql.com/downloads/
 
 ## Set Up
