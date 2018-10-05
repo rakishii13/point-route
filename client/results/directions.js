@@ -5,7 +5,13 @@ function getDirections(){
   $.ajax({
     url: url,
     success: function(response) {
-      routes = typecastRoutes(response.routes);
+      if(typeof response == 'string') {
+        console.log(response)
+        var parsed_json = JSON.parse(response);
+        routes = typecastRoutes(parsed_json.routes);
+      } else {
+        routes = typecastRoutes(response.routes);
+      }
       request = {
         travelMode: 'DRIVING',
         origin: originPlace.geometry.location.toJSON(),

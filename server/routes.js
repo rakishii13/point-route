@@ -25,16 +25,18 @@ router.get('/directions', function(req, res){
   var query = 'SELECT * FROM routes WHERE origin = ? AND destination = ?';
   connection.query(query, [origin, destination], function(error, results, fields) {
     if (results.length == 0) {
-      console.log("google api")
+      console.log("google api routes")
       getGoogleDirections(req, res);
     } else if (error) {
       res.send(error);
     } else {
-      console.log("db");
-      res.send(JSON.parse(results[0].directions));
+      console.log("routes db");
+      res.send(results[0].directions);
     }
   });
 });
+
+var response_google;
 
 function getGoogleDirections(req, res) {
   googleMapsClient.directions({
@@ -42,7 +44,7 @@ function getGoogleDirections(req, res) {
     destination: req.query.destination
   }, function(err, response) {
     if (!err) {
-      var query = "INSERT INTO routes VALUES('" + req.query.origin + "','" + req.query.destination + "', '" + response.json + "')";
+      var query = "INSERT INTO routes VALUES('" + req.query.origin + "','" + req.query.destination + "', '" + JSON.stringify(response.json) + "')";
       connection.query(query, function(error, results, fields) {
         if (error) throw error;
         res.send(response.json);
@@ -64,7 +66,7 @@ router.get('/weather', function(req, res){
     } else if (error) {
       res.send(error);
     } else {
-      console.log("db");
+      console.log("weather db");
       response = { main : {} };
       response.main['temp'] = results[0].temperature;
       res.send(response);

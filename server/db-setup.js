@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
 
 connection.connect()
 
-connection.query('CREATE TABLE routes (origin VARCHAR(40), destination VARCHAR(40), directions LONGTEXT); CREATE TABLE weather (latitude VARCHAR(32), longitude VARCHAR(32), temperature DECIMAL(5,2), date DATE)', function (err, rows, fields) {
+connection.query('CREATE TABLE routes (origin VARCHAR(40), destination VARCHAR(40), directions JSON); CREATE TABLE weather (latitude VARCHAR(32), longitude VARCHAR(32), temperature DECIMAL(5,2), date DATE)', function (err, rows, fields) {
   if (err) throw err
   console.log('tables created');
 })
