@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "start": "nodemon index.js",
-    "dBsetup": "node db-setup.js"
+    "db-setup": "node db-setup.js"
   },
   "dependencies": {
     "@google/maps": "^0.5.5",
@@ -20,8 +20,7 @@
     "morgan": "^1.9.1",
     "multer": "^1.4.0",
     "mysql": "^2.16.0",
-    "request": "^2.88.0",
-    "util": "^0.11.0"
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"

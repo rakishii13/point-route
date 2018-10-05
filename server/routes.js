@@ -1,4 +1,5 @@
 var express = require('express');
+require('dotenv').config()
 var router = express.Router();
 const request = require('request');
 var moment = require('moment');
@@ -10,10 +11,10 @@ const googleMapsClient = require('@google/maps').createClient({
 
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'password',
-  database : 'point_route',
+  host     : process.env.DB_HOST,
+  user     : process.env.DB_USER,
+  password : process.env.DB_PASS,
+  database : process.env.DB_NAME,
 	multipleStatements: true
 });
 
